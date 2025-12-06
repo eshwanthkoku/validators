@@ -4,6 +4,8 @@
 
 @using (Html.BeginForm())
 {
+    <h1>@ViewBag.UserId</h1>
+    <h1>@ViewData["ID"]</h1>
     <div class="form-group">
         @Html.LabelFor(m => m.FullName)
         @Html.TextAreaFor(m => m.FullName, new { @class = "form-control"})

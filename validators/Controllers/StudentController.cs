@@ -14,6 +14,10 @@ namespace validators.Controllers
         }
         public IActionResult Create()
         {
+            ViewBag.UserId = "I have Vijay Id";
+            ViewBag.UserName = "I have Vijay Id";
+
+            ViewData["ID"] = "600116";
             LoadDropDown();
             return View();
         }
