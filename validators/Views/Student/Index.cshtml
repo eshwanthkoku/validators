@@ -1,0 +1,33 @@
+﻿@model IEnumerable<validators.Models.StudentViewModel>
+
+<h2>Students List</h2>
+
+@Html.ActionLink("Add New Student", "Create", routeValues: null,  new { @class = "btn btn-success" })
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.FullName)</th>
+            <th>@Html.DisplayNameFor(m => m.Age)</th>
+            <th>@Html.DisplayNameFor(m => m.Email)</th>
+            <th>@Html.DisplayNameFor(m => m.Mobile)</th>
+            <th>@Html.DisplayNameFor(m => m.Gender)</th>
+            <th>@Html.DisplayNameFor(m => m.CountryId)</th>
+            <th>@Html.DisplayNameFor(m => m.Password)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.FullName)</td>
+                <td>@Html.DisplayFor(m => item.Age)</td>
+                <td>@Html.DisplayFor(m => item.Email)</td>
+                <td>@Html.DisplayFor(m => item.Mobile)</td>
+                <td>@Html.DisplayFor(m => item.Gender)</td>
+                <td>@Html.DisplayFor(m => item.CountryId)</td>
+                <td>@Html.DisplayFor(m => item.Password)</td>
+            </tr>
+        }
+    </tbody>
+</table>

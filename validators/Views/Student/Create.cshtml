@@ -1,0 +1,55 @@
+﻿@model validators.Models.StudentViewModel
+
+<h2>Create Student</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.FullName)
+        @Html.TextAreaFor(m => m.FullName, new { @class = "form-control"})
+        @Html.ValidationMessageFor(m => m.FullName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age)
+        @Html.TextAreaFor(m => m.Age, new { @class = "form-control", Type = "number" })
+        @Html.ValidationMessageFor(m => m.Age)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextAreaFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Mobile)
+        @Html.TextAreaFor(m => m.Mobile, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Mobile)
+    </div>
+    <div class="form-group">
+        <label>Gender</label><br />
+        @Html.RadioButtonFor(m => m.Gender,"Male")Male
+        @Html.RadioButtonFor(m => m.Gender,"Female")Femal
+        @Html.ValidationMessageFor(m => m.Gender)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CountryId)
+        @Html.DropDownListFor(m => m.CountryId,
+        new SelectList(ViewBag.Vijay, "Value", "Text"),
+            "Select Country",
+            new { @class = "form-control" }
+            )
+        @Html.ValidationMessageFor(m => m.CountryId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+    @Html.TextAreaFor(m => m.Password, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ComparePassword)
+        @Html.TextAreaFor(m => m.ComparePassword, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ComparePassword)
+    </div>
+
+
+    <button class="btn btn-primary">Submit</button>
+}
